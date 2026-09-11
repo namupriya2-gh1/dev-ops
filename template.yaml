@@ -1,0 +1,5 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'DevOps Task 10 - Dev Environment Stack'
+Resources:
+  Task10S3Bucket:
+    Type: 'AWS::S3::Bucket'
