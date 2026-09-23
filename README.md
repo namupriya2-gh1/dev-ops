@@ -73,6 +73,20 @@ Below are the standalone commands used during testing to explore networks, build
   ```
 
 ---
+## 🚀 Script 2: Automated AWS Resource Auditor & Cost Tracker
+
+Located in the root directory as `aws_resource_tracker.sh`, this automation script acts as a localized cloud-auditing cron tool. It systematically aggregates infrastructure consumption data across high-billing vectors to prevent orphan resources and control organization spending.
+
+### 🔍 Key Features Implemented:
+* **Multi-Service Scanning:** Programmatically queries core AWS computing and security resources (`S3`, `EC2`, `Lambda`, and `IAM`) in a single executable step.
+* **Error-Resilient JSON Parsing:** Integrates advanced `jq` piping using structural array filters and safe optional selectors (`[]?`). This prevents the script from breaking or throwing stream errors when parsing completely empty objects or unprovisioned infrastructure layers.
+* **Operational Business Impact:** Replaces manual auditing methods, providing DevOps administrators with a clean, un-cluttered tracking log of operational footprints.
+
+### How to execute it:
+```bash
+chmod +x aws_resource_tracker.sh
+./aws_resource_tracker.sh
+```
 
 ### 🚨 Crucial Security Rule
 **NEVER git commit your AWS Access Keys, Secret Keys, or your `.pem` keys into GitHub.** This script assumes the operator has already securely configured credentials locally via `aws configure`.
