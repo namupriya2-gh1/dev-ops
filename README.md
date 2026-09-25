@@ -90,3 +90,14 @@ chmod +x aws_resource_tracker.sh
 
 ### 🚨 Crucial Security Rule
 **NEVER git commit your AWS Access Keys, Secret Keys, or your `.pem` keys into GitHub.** This script assumes the operator has already securely configured credentials locally via `aws configure`.
+## 🌿 Git Branching Strategy & Workflow
+
+This project utilizes a structured branching model to simulate a production-grade DevOps environment:
+* **`main` (Production):** Hosts clean, stable, tested infrastructure configurations. Directly reflects live workloads.
+* **`feature/*` (Development):** Isolated work tracks utilized for implementing individual scripts or code modifications (e.g., `feature/login-auth`) without risking production uptime.
+
+### Workflow Executed:
+1. Checked out a clean feature sandbox from `main`.
+2. Authored and locally tracked atomic script enhancements (`app.sh`).
+3. Dispatched the tracked timeline to the cloud for validation testing (`git push origin feature/*`).
+4. Re-integrated the validated payload securely back into production using a clean `Fast-forward` merge strategy.
