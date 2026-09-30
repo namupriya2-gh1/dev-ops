@@ -116,6 +116,12 @@ This repository includes a production-grade automation script (`list_users.sh`) 
 ```bash
 # 1. Inject your credentials into terminal memory
 export username="your-github-username"
-export token="your-personexport token="your-personexport token="your-personexport token="your-personexport token="your-personexport tokenory
+export token="your-personal-access-token"
+
+# 2. Grant execution permissions
+chmod +x list_users.sh
+
+# 3. Execute against a target repository
 ./list_users.sh namupriya2-gh1 dev-ops
 ```
+
