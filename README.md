@@ -101,3 +101,21 @@ This project utilizes a structured branching model to simulate a production-grad
 2. Authored and locally tracked atomic script enhancements (`app.sh`).
 3. Dispatched the tracked timeline to the cloud for validation testing (`git push origin feature/*`).
 4. Re-integrated the validated payload securely back into production using a clean `Fast-forward` merge strategy.
+
+## 🤖 GitHub API Collaborator Auditing Tool
+
+This repository includes a production-grade automation script (`list_users.sh`) that programmatically integrates with the **GitHub REST API** to audit repository user permissions. 
+
+### Key Technical Concepts Implemented:
+* **Credential Security:** Securely consumes **GitHub Personal Access Tokens (PAT)** via terminal environment variables (`$token`) to prevent plain-text secret leakage within the codebase.
+* **Reusable Inputs:** Leverages Bash positional parameters (`$1` and `$2`) so the same tool can dynamically target any organization and repository ecosystem without code modifications.
+* **Network Automation:** Executes authenticated HTTP network requests using **`curl`** to communicate with external cloud endpoints.
+* **JSON Parsing:** Pipes raw API payloads directly into **`jq`** to filter out structural noise and isolate explicit collaborator logins.
+
+### How to Run the Automation:
+```bash
+# 1. Inject your credentials into terminal memory
+export username="your-github-username"
+export token="your-personexport token="your-personexport token="your-personexport token="your-personexport token="your-personexport tokenory
+./list_users.sh namupriya2-gh1 dev-ops
+```
