@@ -55,10 +55,14 @@ Below are the standalone commands used during testing to explore networks, build
   ```
 
 ### 3. CloudFormation Automation & Financial Teardown
-* **Deploy an infrastructure stack using local absolute file systems:**
-  ```bash
-  aws cloudformation create-stack --stack-name dev-environment --template-body file:///Users/Namusuresh/Documents/Dev-ops/template.yaml
-  ```
+* ** Deploy an infrastructure stack using a relative file path (portable for any machine):**
+```bash
+aws cloudformation create-stack --stack-name dev-environment --template-body file://template.yaml
+ ```
+* ** Alternatively, if executing via an absolute file system path:**
+```bash
+aws cloudformation create-stack --stack-name dev-environment --template-body file:///absolute/path/to/your/template.yaml
+ ```
 * **Track stack build cycles live:**
   ```bash
   aws cloudformation describe-stack-events --stack-name dev-environment --query "StackEvents[*].[ResourceStatus,ResourceType,LogicalResourceId]" --output table
