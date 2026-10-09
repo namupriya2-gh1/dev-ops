@@ -129,3 +129,12 @@ chmod +x list_users.sh
 ./list_users.sh namupriya2-gh1 dev-ops
 ```
 
+🚀 CI/CD Automation Quality Gate
+This repository features an automated GitHub Actions pipeline (.github/workflows/devops-pipeline.yml) designed to enforce engineering standards across infrastructure components before they reach production.
+
+🔍 Quality Gates Implemented:
+- Static Script Analysis: Executes ShellCheck on all bash scripts to isolate runtime bugs, syntax errors, and edge cases.
+- Infrastructure Security Linting: Runs cfn-lint to validate AWS CloudFormation templates against schema validation limits and structural anti-patterns.
+- Automated Test Execution: Simulates a QA validation layer to ensure seamless system integration before deployment.
+
+
